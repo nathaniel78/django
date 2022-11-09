@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+    <meta charset="UTF-8">
+    <title>Clientes</title>
+</head>
+<body>
+
+    <h1>Clientes</h1>
+
+        <p><a href="{% url 'logout' %}">Log Out</a></p>
+
+        <ul>
+            {% for pessoas in r_pessoas %}
+                <li>
+                    <a href="{% url 'clientes_atualizar' pessoas.id %}">{{ pessoas.nome }}</a> -
+                    <a href="{% url 'clientes_excluir' pessoas.id %}">Excluir</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+    <meta charset="UTF-8">
+    <title>Clientes</title>
+</head>
+<body>
+
+    <h1>Clientes</h1>
+
+    <h2>Deseja excluir o registro?</h2>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" disabled="true" value="{{ r_pessoa.nome }}" />
+        <button type="submit">Excluir</button>
+    </form>
+
+</body>
+</html>
